@@ -1,0 +1,364 @@
+/* Alle witruimtes weg rond startpagina */
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+/* Opmaak hoofding */
+
+.banner-image{
+    background-image: url("/image/Banner.png");
+    background-size: cover;
+    width: 100%;
+    max-height: 234.5px;
+}
+
+/* Titel */
+h1{
+    font-size: 2rem;
+    font-family: cursive;
+    margin-top: 20px;
+    margin-bottom: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Ontertitel */
+#ondertitel{
+    font-size: 1rem;
+    font-family: cursive;
+    margin: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* nav opmaken */
+
+nav a:link, nav a:visited{
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+
+nav a:hover{
+    text-decoration: underline;
+    color: #b1a7a6;
+}
+
+nav ul{
+    list-style-type: none;
+    text-align: center;
+}
+
+nav{
+    background-color: #D3D3D3;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.huidig{
+    color: #b1a7a6;;
+}
+
+/* Hamburger menu */
+
+/* muisaanwijzer instellen */
+nav img#hamburger-icon {
+    cursor: pointer;
+    margin-left: 50%;
+}
+  
+/* default verbergen we het menu */
+nav ul {
+    display: none;
+}
+  
+/* als de checkbox checked is geven we het menu
+terug weer */
+nav #menu-checkbox:checked ~ ul {
+    display: block;
+}
+  
+/* checkbox moet niet zichtbaar zijn */
+nav #menu-checkbox {
+    display: none;
+}
+
+/* main opmaken */
+
+main{
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #F5F3F4;
+}
+
+h2{
+    font-size: 2rem;
+    font-family: "tahoma";
+}
+
+p{
+    font-family: "new roman";
+}
+
+/* link onopvallend maken in tekst */
+.websitelink:link, .websitelink:visited{
+    font-family: "new roman";
+    font-style: italic;
+    color: black;
+    text-decoration: none;
+}
+
+/* link laten opvallen bij hoveren */
+.websitelink:hover{
+    color: grey;
+    text-decoration: underline;
+}
+
+#artikel1{
+    margin-top: 20px;
+    border: 1px solid #B1A7A6;
+    border-radius: 1rem;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#profielfoto{
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: -75px;
+}
+
+#artikel2{
+    margin-top: 75px;
+}
+
+/* footer opmaken */
+
+footer{
+    display: flex;
+    flex-direction: 100vh;
+    justify-content: center;
+    background-color: #D3D3D3;
+
+}
+
+.container{
+    flex-grow: 1;
+}
+
+footer ul{
+    list-style-type: none;
+}
+
+.footerlink:link, .footerlink:visited{
+    text-decoration: none;
+    color: white;
+}
+
+.footerlink:hover{
+    text-decoration: underline;
+    color: #b1a7a6;
+}
+
+/* grid */
+body{
+    display: grid;
+    grid-auto-rows: auto;
+    grid-template-areas: "header" "nav" "main" "footer";
+}
+
+.banner-image{
+    grid-area: header;
+}
+
+header{
+    grid-area: header;
+}
+
+nav{
+    grid-area: nav;
+}
+
+main{
+    grid-area: main;
+}
+
+footer{
+    grid-area: footer;
+}
+
+/* tabellen vaardigheden */
+
+/* talen */
+#taal, #uitbreiding, #programmeertaal{
+    display: flex;
+    justify-content: center;
+    border-collapse: collapse;
+    border-radius: 1rem;
+}
+
+#taal th, #uitbreiding th,
+#programmeertaal th{
+    background-color: #D3D3D3;
+}
+
+#taal th, #taal td,
+#uitbreiding th, #uitbreiding td,
+#programmeertaal th, #programmeertaal td{
+    border: 2px solid #B1A7A6;
+    padding: 5px;
+    color: #161A1D;
+}
+
+#programmeertaal{
+    margin-bottom: 20px;
+}
+
+/* vanaf 330px */
+@media screen and (min-width:330px){
+    h1{
+        font-size: 3rem;
+    } 
+}
+
+/* vanaf480px */
+@media screen and (min-width:480px){
+    h1{
+        font-size: 4rem;
+    }
+}
+
+/* vanaf 490px */
+
+@media screen and (min-width:520px){
+
+    h1{
+        font-size: 5rem;
+    }
+
+    #ondertitel{
+        font-size: 1.5rem;
+    }
+
+    #hamburger-icon{
+        display: none;
+    }
+
+    nav ul{
+        display: flex;
+        justify-content: center;
+    }
+
+    nav li{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+}
+
+@media screen and (min-width:640px){
+    body{
+        display: grid;
+        grid-template-columns: 20ch 1fr;
+        grid-template-areas: "header header" "nav main" "footer footer";
+        max-width: 1380px;
+        margin: auto;
+    }
+
+    nav{
+        display: flex;
+        font-size: 20px;
+        justify-content: center;
+    }
+
+    nav ul{
+        flex-direction: column;
+        align-self: start;
+        padding: 0;
+    }
+
+    nav li{
+        margin-bottom: 10px;
+    }
+
+    /* lijnen tussen articles van studies */
+    #mainstudies article + article{
+        border-top: 1px solid #D3D3D3;
+    }
+}
+
+/* vanaf 1000px */
+@media screen and (min-width:1000px){
+    /* tabellen schikken */
+    main{
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "titel1 titel2" "taal uitbreiding" 
+        "titel3 titel3" "programmeertaal programmeertaal";
+    }
+
+    #titeltalen{
+        grid-area: titel1;
+    }
+
+    #titeluitbreiding{
+        grid-area: titel2;
+    }
+
+    #taal{
+        grid-area: taal;
+    }
+
+    #uitbreiding{
+        grid-area: uitbreiding;
+    }
+
+    #titelprogrammeertalen{
+        grid-area: titel3;
+    }
+
+    #programmeertaal{
+        grid-area: programmeertaal;
+    }
+
+    /* footer index beter maken */
+    #mainfront{
+        padding-bottom: 5rem;
+    }
+
+    /* main studies beter maken */
+
+    #mainstudies{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "TI ENM" "IW IW"
+    }
+
+    #TI{
+        grid-area: TI;
+        padding-right: 10px;
+        padding-left: 10px;
+        border-right: 1px solid #D3D3D3;
+        border-bottom: 1px solid #D3D3D3;
+    }
+
+    #ENM{
+        grid-area: ENM;
+        padding-right: 10px;
+        padding-left: 10px;
+        border-bottom: 1px solid #D3D3D3;
+    }
+
+    #IW{
+        grid-area: IW;
+        text-align: center;
+        max-width: 20rem;
+        margin: 0 auto;
+    }
+
+}
